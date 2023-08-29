@@ -4,6 +4,8 @@ brain-games:	#	 Запуск игры
 	node bin/brain-games.js
 brain-even:	#	 Запуск игры "четность"
 	node bin/brain-even.js
+brain-calc:	#	 Запуск игры "четность"
+	node bin/brain-calc.js
 publish:	#	
 	npm publish --dry-runnpm
 lint:
