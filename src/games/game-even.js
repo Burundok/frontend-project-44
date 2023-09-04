@@ -8,7 +8,7 @@ const gameEven = () => {
     let correctAnswer = "";
     if (randomNum % 2 === 0) {
         correctAnswer = "yes"
-        } else {
+    } else {
         correctAnswer = "no"
     }
 
