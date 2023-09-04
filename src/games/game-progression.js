@@ -7,13 +7,13 @@ const gameProgression = () => {
         return Math.floor(Math.random() * (max - min) + min)
     }
     
-    let length = getRandomNumber(5, 10);
+    let length = getRandomNumber(4, 9);
     let arr = [];
     for (let i = 0; i <= length; i += 1) {
         arr.push(step * (i + 1));
     }
 
-    let x = getRandomNumber(1, length);
+    let x = getRandomNumber(0, length + 1);
     const correctAnswer = arr[x];
     arr[x] = "..";
     let arrString = arr.toString();
