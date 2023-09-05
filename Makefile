@@ -1,10 +1,10 @@
 install:	#	Установка
 	npm ci
-brain-games:	#	 Запуск игры
+brain-games:	#	 Приветствие
 	node bin/brain-games.js
-brain-even:	#	 Запуск игры "четность"
+brain-even:	#	 Запуск игры "Четность"
 	node bin/brain-even.js
-brain-calc:	#	 Запуск игры "четность"
+brain-calc:	#	 Запуск игры "Калькулятор"
 	node bin/brain-calc.js
 brain-nod: #	Запуск игры "Нод"
 	node bin/brain-nod.js

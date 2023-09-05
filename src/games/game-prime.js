@@ -6,7 +6,7 @@ const gamePrime = () => {
     const question = (`Question: ${randomNum}`);
     
     let correctAnswer = "";
-    for (let i = 2; i < randomNum; i++) {
+    for (let i = 2; i < randomNum; i += 1) {
         if (randomNum % i === 0) {
             correctAnswer = "yes"
         } else {

@@ -18,8 +18,6 @@ const gameProgression = () => {
     arr[x] = "..";
     let arrString = arr.toString();
     const question = (`Question: ${arrString.replace(/,/g, ' ')}`);
-    // console.log(question);
-    // console.log(correctAnswer);
     const gameData = [question, String(correctAnswer)];
     return gameData;
 };

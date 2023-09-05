@@ -4,6 +4,7 @@ const gameCalc = () => {
 
     const operandOne = Math.floor(Math.random() * 10);
     const operandTwo = Math.floor(Math.random() * 10);
+
     function getRandomNumber(min, max) {
         return Math.floor(Math.random() * (max - min) + min)
     }
@@ -24,8 +25,6 @@ const gameCalc = () => {
             correctAnswer = operandOne * operandTwo;
             break;
     }
-
-    // console.log(correctAnswer);
     
     const gameData = [question, String(correctAnswer)];
     return gameData;
