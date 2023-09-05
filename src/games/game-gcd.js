@@ -1,6 +1,6 @@
 const rules = `Find the greatest common divisor of given numbers.`;
 
-const gameNod = () => {
+const gameGcd = () => {
     let operandOne = Math.floor(Math.random() * 100);
     let operandTwo = Math.floor(Math.random() * 100);
     const question = (`Question: ${operandOne} ${operandTwo}`);
@@ -21,4 +21,4 @@ const gameNod = () => {
     return gameData;
 };
 
-export {rules, gameNod};
+export {rules, gameGcd};
