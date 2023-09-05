@@ -1,16 +1,15 @@
 const rules = `Answer "yes" if given number is prime. Otherwise answer "no".`;
 
 const gamePrime = () => {
-
-    const randomNum = Math.floor(Math.random() * 1000);
-    const question = (`Question: ${randomNum}`);
     
-    let correctAnswer = "";
+    let randomNum = Math.floor(Math.random() * 1000);
+    let question = (`Question: ${randomNum}`);
+    
+    let correctAnswer = "yes";
     for (let i = 2; i < randomNum; i += 1) {
         if (randomNum % i === 0) {
-            correctAnswer = "yes"
-        } else {
-            correctAnswer = "no"
+            correctAnswer = "no";
+            break;
         }
     }
 
