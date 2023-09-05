@@ -8,6 +8,7 @@ export const core = (rules, gameArr) => {
 
     console.log(rules);
 
+    let correctAnswers = 0;
     for (let i = 0; i < 3; i += 1) {
         let gameData = gameArr();
 
@@ -16,11 +17,15 @@ export const core = (rules, gameArr) => {
         let answer = readlineSync.question("Your answer: ");
 
         if (answer === gameData[1]) {
+            correctAnswers += 1;
             console.log ("Correct!");
         } else {
             console.log(`"${answer}" is wrong answer ;(. Correct answer was "${gameData[1]}".`);
-            i = -1;
+            console.log(`Let's try again, ${userName}!`);
+            break;
         }
     }
-    console.log(`Congratulations, ${userName}!`);
+    if (correctAnswers >= 3) {
+        console.log(`Congratulations, ${userName}!`);
+    }
 };
