@@ -8,7 +8,7 @@ const gameEven = () => {
   if (randomNum % 2 === 0) {
     correctAnswer = 'yes';
   } else {
-    correctAnswer = 'no"';
+    correctAnswer = 'no';
   }
 
   const gameData = [question, correctAnswer];
