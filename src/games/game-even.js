@@ -1,18 +1,15 @@
+import core from '../index.js';
+import getRandomNumber from '../utils.js';
+
 const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const gameEven = () => {
-  const randomNum = Math.floor(Math.random() * 100);
+const calculate = (num) => num % 2 === 0;
+
+const dataEven = () => {
+  const randomNum = getRandomNumber(1, 100);
   const question = (`Question: ${randomNum}`);
-
-  let correctAnswer = '';
-  if (randomNum % 2 === 0) {
-    correctAnswer = 'yes';
-  } else {
-    correctAnswer = 'no';
-  }
-
-  const gameData = [question, correctAnswer];
-  return gameData;
+  const correctAnswer = calculate(randomNum) ? 'yes' : 'no';
+  return [question, correctAnswer];
 };
 
-export { rules, gameEven };
+export default () => core(rules, dataEven);

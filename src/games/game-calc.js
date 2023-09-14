@@ -1,33 +1,29 @@
+import core from '../index.js';
+import getRandomNumber from '../utils.js';
+
 const rules = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
-const gameCalc = () => {
-  const operandOne = Math.floor(Math.random() * 10);
-  const operandTwo = Math.floor(Math.random() * 10);
-
-  function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-  let question = '';
-  let correctAnswer = 0;
-  switch (getRandomNumber(0, 3)) {
-    case 0:
-      question = (`Question: ${operandOne} + ${operandTwo}`);
-      correctAnswer = operandOne + operandTwo;
-      break;
-    case 1:
-      question = (`Question: ${operandOne} - ${operandTwo}`);
-      correctAnswer = operandOne - operandTwo;
-      break;
-    case 2:
-      question = (`Question: ${operandOne} * ${operandTwo}`);
-      correctAnswer = operandOne * operandTwo;
-      break;
+const calculate = (operandOne, operator, operandTwo) => {
+  switch (operator) {
+    case '+':
+      return operandOne + operandTwo;
+    case '-':
+      return operandOne - operandTwo;
+    case '*':
+      return operandOne * operandTwo;
     default:
+      return 'Error';
   }
-
-  const gameData = [question, String(correctAnswer)];
-  return gameData;
 };
 
-export { rules, gameCalc };
+const dataCalc = () => {
+  const operandOne = getRandomNumber(1, 10);
+  const operandTwo = getRandomNumber(1, 10);
+  const operator = operators[getRandomNumber(0, 3)];
+  const question = `${operandOne} ${operator} ${operandTwo}`;
+  const correctAnswer = calculate(operandOne, operator, operandTwo);
+  return [question, String(correctAnswer)];
+};
+
+export default () => core(rules, dataCalc);

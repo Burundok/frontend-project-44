@@ -1,25 +1,27 @@
+import core from '../index.js';
+import getRandomNumber from '../utils.js';
+
 const rules = 'What number is missing in the progression?';
 
-const gameProgression = () => {
-  const step = Math.floor(Math.random() * 10 + 1);
-
-  function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-  }
-
-  const length = getRandomNumber(4, 9);
+const calculate = (step, length, hiddenIndex) => {
   const arr = [];
   for (let i = 0; i <= length; i += 1) {
     arr.push(step * (i + 1));
   }
-
-  const x = getRandomNumber(0, length + 1);
-  const correctAnswer = arr[x];
-  arr[x] = '..';
+  const correctAnswer = String(arr[hiddenIndex]);
+  arr[hiddenIndex] = '..';
   const arrString = arr.toString();
   const question = (`Question: ${arrString.replace(/,/g, ' ')}`);
-  const gameData = [question, String(correctAnswer)];
-  return gameData;
+  return [question, correctAnswer];
 };
 
-export { rules, gameProgression };
+const dataProgression = () => {
+  const step = Math.floor(Math.random() * 10 + 1);
+  const length = getRandomNumber(4, 9);
+  const hiddenIndex = getRandomNumber(0, length + 1);
+  return calculate(step, length, hiddenIndex);
+};
+
+export { rules, dataProgression };
+
+export default () => core(rules, dataProgression);

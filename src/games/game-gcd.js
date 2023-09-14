@@ -1,28 +1,25 @@
+import core from '../index.js';
+import getRandomNumber from '../utils.js';
+
 const rules = 'Find the greatest common divisor of given numbers.';
 
-const gameGcd = () => {
-  let operandOne = Math.floor(Math.random() * 100);
-  let operandTwo = Math.floor(Math.random() * 100);
-  const question = (`Question: ${operandOne} ${operandTwo}`);
-  let correctAnswer = operandOne;
-
-  if (operandOne === operandTwo) {
-    const gameData = [question, correctAnswer];
-    return gameData;
+const calculate = (num1, num2) => {
+  let operandOne = num1;
+  let operandTwo = num2;
+  while (operandTwo !== 0) {
+    const remainder = operandOne % operandTwo;
+    operandOne = operandTwo;
+    operandTwo = remainder;
   }
-
-  while (operandOne !== operandTwo) {
-    if (operandOne > operandTwo) {
-      operandOne -= operandTwo;
-    } else {
-      operandTwo -= operandOne;
-    }
-  }
-
-  correctAnswer = String(operandOne);
-
-  const gameData = [question, correctAnswer];
-  return gameData;
+  return String(operandOne);
 };
 
-export { rules, gameGcd };
+const dataGcd = () => {
+  const operandOne = getRandomNumber(1, 100);
+  const operandTwo = getRandomNumber(1, 100);
+  const question = (`Question: ${operandOne} ${operandTwo}`);
+  const correctAnswer = calculate(operandOne, operandTwo);
+  return [question, correctAnswer];
+};
+
+export default () => core(rules, dataGcd);

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { rules, gameProgression } from '../src/games/game-progression.js';
-import core from '../src/index.js';
+import progression from '../src/games/game-progression.js';
 
-core(rules, gameProgression);
+progression();
