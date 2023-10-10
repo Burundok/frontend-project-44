@@ -1,4 +1,4 @@
-import core from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const rules = 'What is the result of the expression?';
@@ -17,7 +17,7 @@ const calculate = (operandOne, operator, operandTwo) => {
   }
 };
 
-const dataCalc = () => {
+const generateDataCalc = () => {
   const operandOne = getRandomNumber(1, 10);
   const operandTwo = getRandomNumber(1, 10);
   const operator = operators[getRandomNumber(0, 3)];
@@ -26,4 +26,4 @@ const dataCalc = () => {
   return [question, String(correctAnswer)];
 };
 
-export default () => core(rules, dataCalc);
+export default () => runGame(rules, generateDataCalc);

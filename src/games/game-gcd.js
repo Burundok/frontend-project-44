@@ -1,4 +1,4 @@
-import core from '../index.js';
+import runGame from '../index.js';
 import getRandomNumber from '../utils.js';
 
 const rules = 'Find the greatest common divisor of given numbers.';
@@ -11,15 +11,15 @@ const calculate = (num1, num2) => {
     operandOne = operandTwo;
     operandTwo = remainder;
   }
-  return String(operandOne);
+  return operandOne;
 };
 
 const dataGcd = () => {
   const operandOne = getRandomNumber(1, 100);
   const operandTwo = getRandomNumber(1, 100);
-  const question = (`Question: ${operandOne} ${operandTwo}`);
+  const question = (`${operandOne} ${operandTwo}`);
   const correctAnswer = calculate(operandOne, operandTwo);
   return [question, correctAnswer];
 };
 
-export default () => core(rules, dataGcd);
+export default () => runGame(rules, dataGcd);
