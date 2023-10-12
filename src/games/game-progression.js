@@ -5,7 +5,7 @@ const rules = 'What number is missing in the progression?';
 
 const makeProgression = (step, length, first) => {
   const arr = [];
-  for (let i = 1; i <= length; i += 1) {
+  for (let i = 1; i <= length - 1; i += 1) {
     arr.push(first + i * step);
   }
   return arr;
