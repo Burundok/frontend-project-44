@@ -13,7 +13,7 @@ const calculate = (operandOne, operator, operandTwo) => {
     case '*':
       return operandOne * operandTwo;
     default:
-      return 'Error';
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 

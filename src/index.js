@@ -16,7 +16,7 @@ const runGame = (rules, gameArr) => {
 
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer === String(correctAnswer)) {
+    if (userAnswer === correctAnswer) {
       console.log('Correct!');
     } else {
       console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);

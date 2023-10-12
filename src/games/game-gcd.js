@@ -17,9 +17,9 @@ const calculateGcd = (num1, num2) => {
 const generateDataGcd = () => {
   const operandOne = getRandomNumber(1, 100);
   const operandTwo = getRandomNumber(1, 100);
-  const question = (`${operandOne} ${operandTwo}`);
+  const question = `${operandOne} ${operandTwo}`;
   const correctAnswer = calculateGcd(operandOne, operandTwo);
-  return [question, correctAnswer];
+  return [question, String(correctAnswer)];
 };
 
 export default () => runGame(rules, generateDataGcd);

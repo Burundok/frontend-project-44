@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/Burundok/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Burundok/frontend-project-44/actions)<a href="https://codeclimate.com/github/Burundok/frontend-project-44/maintainability"> <img src="https://api.codeclimate.com/v1/badges/617426271beb9c7e50e9/maintainability" /></a>
+[![Actions Status](https://github.com/Burundok/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Burundok/frontend-project-44/actions/workflows/hexlet-check.yml)<a href="https://codeclimate.com/github/Burundok/frontend-project-44/maintainability"> <img src="https://api.codeclimate.com/v1/badges/617426271beb9c7e50e9/maintainability" /></a>
 
 ## Описание
 «Игры разума» — это набор из пяти консольных игр. Каждая игра задает вопросы, на которые нужно дать правильные ответы. После трех правильных ответов считается, что игра пройдена. Неправильный ответ завершит игру.
